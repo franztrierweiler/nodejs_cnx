@@ -2,6 +2,17 @@
 const http = require('http')
 const port = 3000
 
+const process_request = function (request)
+{
+	request.on('data', chunk => {
+    console.log(`Data chunk available: ${chunk}`);
+  });
+  
+  request.on('end', () => {
+    //end of data
+  })
+}
+
 const requestHandler = (request, response) => {
   
   console.log ('-- Request info: request.headers.origin');
@@ -21,6 +32,8 @@ const requestHandler = (request, response) => {
 		response.end();
 		return;
 	}
+	
+	process_request(request);
   
   console.log(request.url)
   response.end('Je suis Node.js Server!')
