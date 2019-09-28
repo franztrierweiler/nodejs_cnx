@@ -1,6 +1,7 @@
 // content of index.js
 const http = require('http')
 const port = 3000
+var count = 0
 
 const process_request = function (request)
 {
@@ -34,8 +35,9 @@ const requestHandler = (request, response) => {
 	}
 	
 	process_request(request);
-  
-  console.log(request.url)
+  console.log(request.url);
+  console.log(count);
+  count++;
   response.end('Je suis Node.js Server!')
 }
 
