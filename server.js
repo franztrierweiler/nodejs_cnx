@@ -66,8 +66,8 @@ io.on('connection', function (socket) {
                 privateKey: require('fs').readFileSync('PATH OF YOUR ')
             });
 });
-console.log("Server is started on 3001");
-server.listen(3001);
+console.log("Server is started on 8080");
+server.listen(8080);
 
 
 
